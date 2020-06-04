@@ -14,6 +14,39 @@ const Main = ({ logo, language, setLanguage }) => {
     window.document.location.href = `https://www.google.com/search?q=${searchStringEdited}`;
   };
 
+  const ruToggle = (
+    <div
+      className='div-lang'
+      onClick={() => {
+        setLanguage('ru');
+      }}
+    >
+      Русский
+    </div>
+  );
+
+  const byToggle = (
+    <div
+      className='div-lang'
+      onClick={() => {
+        setLanguage('by');
+      }}
+    >
+      Беларуская
+    </div>
+  );
+
+  const enToggle = (
+    <div
+      className='div-lang'
+      onClick={() => {
+        setLanguage('en');
+      }}
+    >
+      English
+    </div>
+  );
+
   return (
     <>
       <div className='main'>
@@ -36,7 +69,12 @@ const Main = ({ logo, language, setLanguage }) => {
             </div>
           ) : null}
 
-          <img src={keyboard} alt='#' className='search-keyboard' />
+          <img
+            src={keyboard}
+            alt='#'
+            className='search-keyboard'
+            title='экранная клавиатура'
+          />
         </div>
         <div className='search-navigator'>
           <button
@@ -45,35 +83,33 @@ const Main = ({ logo, language, setLanguage }) => {
               searchInGoogle();
             }}
           >
-            {language === 'ru' ? 'Поиск в Google' : 'Пошук Google'}
+            {language === 'ru'
+              ? 'Поиск в Google'
+              : language === 'by'
+              ? 'Пошук Google'
+              : language === 'en'
+              ? 'Google search'
+              : null}
           </button>
           <button className='main-button'>
-            {language === 'ru' ? 'Мне повезет!' : 'Мне пашанцуе'}
+            {language === 'ru'
+              ? 'Мне повезет!'
+              : language === 'by'
+              ? 'Мне пашанцуе'
+              : language === 'en'
+              ? "I'm feeling Lucky"
+              : null}
           </button>
         </div>
         <div className='search-languages'>
           {language === 'ru'
-            ? `Сервисы Google доступны на разных языках:`
-            : 'Даступная мова:'}
-          {language === 'ru' ? (
-            <div
-              className='div-lang'
-              onClick={() => {
-                setLanguage('by');
-              }}
-            >
-              Беларуская
-            </div>
-          ) : language === 'by' ? (
-            <div
-              className='div-lang'
-              onClick={() => {
-                setLanguage('ru');
-              }}
-            >
-              Русский
-            </div>
-          ) : null}
+            ? 'Сервисы Google доступны на разных языках:'
+            : language === 'by'
+            ? 'Даступная мова:'
+            : 'Google offered in: '}
+          {language !== 'ru' ? ruToggle : null}
+          {language !== 'by' ? byToggle : null}
+          {language !== 'en' ? enToggle : null}
         </div>
       </div>
 

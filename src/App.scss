@@ -73,6 +73,14 @@ body {
   }
 }
 
+.navigator-button-block {
+  width: 16px;
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+  }
+}
+
 .navigator-login {
   height: 30px;
   width: 65px;
@@ -94,8 +102,8 @@ body {
 }
 
 .main {
+  padding-top: 163px;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
@@ -110,7 +118,7 @@ body {
   border: 1px solid $inputBorderColor;
   border-radius: 22px;
   height: 44px;
-  width: 582px;
+  min-width: 582px;
   &:hover {
     box-shadow: 0 0 4px 2px $footerBorderColor;
   }
@@ -119,11 +127,8 @@ body {
 .search-loup {
   padding-left: 15px;
   padding-right: 15px;
-  width: 20px;
-  height: 20px;
-  &:hover {
-    cursor: pointer;
-  }
+  width: 15px;
+  height: 15px;
 }
 
 .main-input {
@@ -140,7 +145,7 @@ body {
 .search-keyboard {
   padding-left: 15px;
   padding-right: 15px;
-  width: 34px;
+  width: 26px;
   &:hover {
     cursor: pointer;
   }
@@ -149,10 +154,13 @@ body {
 .search-clean {
   font-size: 30px;
   color: $footerFontColor;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .search-navigator {
-  width: 500px;
+  min-width: 500px;
   height: 50px;
   display: flex;
   justify-content: center;
@@ -163,7 +171,7 @@ body {
 
 .main-button {
   margin-left: 15px;
-  width: 136px;
+  width: 133px;
   height: 36px;
   background: $btnBackgroundColor;
   border: 1px solid $btnBackgroundColor;
@@ -188,6 +196,7 @@ body {
 }
 
 .div-lang {
+  padding-left: 5px;
   font-size: small;
   color: #36369e;
   &:hover {
@@ -245,4 +254,100 @@ body {
   border-top: 1px solid $footerBorderColor;
   background-color: $footerBackgroundColor;
   color: $footerFontColor;
+}
+
+.menu {
+  width: 300px;
+  height: 400px;
+  position: fixed;
+  border: 1px solid $footerBorderColor;
+  right: 30px;
+  top: 70px;
+  overflow-y: scroll;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 0 0 4px 2px $footerBorderColor;
+  display: grid;
+  grid-template-columns: 90px 90px 90px;
+  grid-auto-rows: 90px;
+  background-color: $mainColorWhite;
+}
+
+.menu-item {
+  margin-top: 10px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  &:hover {
+    background: $footerBackgroundColor;
+  }
+}
+
+.menu-img {
+  width: 48px;
+}
+
+.menu-name {
+  font-size: 14px;
+  color: $footerFontColor;
+}
+
+@media all and (max-width: 768px) {
+  .span-country {
+    font-size: 11px;
+  }
+  .main {
+    padding-top: 63px;
+  }
+  .search-navigator {
+    min-width: 360px;
+  }
+  .searcher {
+    min-width: 360px;
+  }
+  .container {
+    grid-auto-rows: 35px 1fr 65px 65px;
+  }
+  .footer-button-left {
+    font-size: 10px;
+    padding-left: 7px;
+  }
+  .footer-button-last {
+    padding-right: 7px;
+  }
+}
+
+@media all and (max-width: 460px) {
+  .search-languages {
+    font-size: 11px;
+  }
+  .div-lang {
+    font-size: 11px;
+  }
+  .search-navigator {
+    min-width: 300px;
+  }
+  .searcher {
+    min-width: 300px;
+  }
+  .footer-button-last {
+    margin-right: 7px;
+  }
+  .footer-button-left {
+    font-size: 10px;
+  }
+  .span-country {
+    font-size: 15px;
+  }
+  .container {
+    grid-auto-rows: 35px 1fr 80px 80px;
+  }
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 40px;
+  }
 }
