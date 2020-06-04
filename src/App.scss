@@ -1,0 +1,248 @@
+$mainColorWhite: #fff;
+$mainColorFont: #212121;
+$buttonBlueColor: #4285f4;
+$buttonBlueColorHover: #3d78dd;
+
+$footerBackgroundColor: #f2f2f2;
+$footerBorderColor: #e4e4e4;
+$footerFontColor: #5f6368;
+$linkActiveColor: #dd4b39;
+$spanColor: #6f6f6f;
+$inputBorderColor: #dfe1e5;
+
+$btnBackgroundColor: #f4f4f4;
+$btnBackgroundColorActive: #f8f8f8;
+$btnBorderColor: #f2f2f2;
+$btnBorderColorActive: #c6c6c6;
+$btnActiveColor: #4d90fe;
+
+* {
+  font-size: 16px;
+  font-family: arial, sans-serif;
+}
+
+body {
+  margin: 0px;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 35px 1fr 40px 40px;
+  grid-template-areas:
+    'nav'
+    'main'
+    'country'
+    'footer';
+}
+
+.navigator {
+  grid-area: nav;
+}
+
+.main {
+  grid-area: main;
+}
+
+.country {
+  grid-area: country;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.navigator-container {
+  height: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 30px;
+  padding-top: 20px;
+}
+
+.navigator-button {
+  color: #222;
+  font-size: 13px;
+  margin-left: 15px;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.navigator-login {
+  height: 30px;
+  width: 65px;
+  color: $mainColorWhite;
+  background-color: $buttonBlueColor;
+  box-sizing: border-box;
+  border: 1px solid $buttonBlueColor;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 30px;
+  font-weight: 700;
+  opacity: 1;
+  &:hover {
+    background: $buttonBlueColorHover;
+    cursor: default;
+    text-decoration: none;
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  margin-bottom: 30px;
+}
+
+.searcher {
+  display: flex;
+  align-items: center;
+  border: 1px solid $inputBorderColor;
+  border-radius: 22px;
+  height: 44px;
+  width: 582px;
+  &:hover {
+    box-shadow: 0 0 4px 2px $footerBorderColor;
+  }
+}
+
+.search-loup {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 20px;
+  height: 20px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.main-input {
+  font-size: 16px;
+  line-height: 34px;
+  height: 34px;
+  width: 100%;
+  border: none;
+  &:active {
+    border: none;
+  }
+}
+
+.search-keyboard {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 34px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.search-clean {
+  font-size: 30px;
+  color: $footerFontColor;
+}
+
+.search-navigator {
+  width: 500px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.main-button {
+  margin-left: 15px;
+  width: 136px;
+  height: 36px;
+  background: $btnBackgroundColor;
+  border: 1px solid $btnBackgroundColor;
+  font-size: 14px;
+  border-radius: 4px;
+  color: #5f6368;
+  &:hover {
+    cursor: pointer;
+    background-color: $btnBackgroundColorActive;
+    border: 1px solid $btnBorderColorActive;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    color: #222;
+  }
+  &:active {
+    border: 1px solid $btnActiveColor;
+  }
+}
+
+.search-languages {
+  font-size: small;
+  display: flex;
+}
+
+.div-lang {
+  font-size: small;
+  color: #36369e;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.country {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 27px;
+}
+
+.span-country {
+  font-size: 15px;
+  color: $spanColor;
+}
+
+.footer {
+  border-top: 1px solid $footerBorderColor;
+  background-color: $footerBackgroundColor;
+  color: $footerFontColor;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footer-button-left {
+  font-size: 14px;
+  padding-left: 27px;
+  color: $footerFontColor;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: $footerFontColor;
+    cursor: pointer;
+  }
+  &:active {
+    text-decoration: none;
+    color: $linkActiveColor;
+  }
+}
+
+.footer-button-right {
+  margin-left: auto;
+}
+
+.footer-button-last {
+  margin-right: 27px;
+}
+
+.country {
+  border-top: 1px solid $footerBorderColor;
+  background-color: $footerBackgroundColor;
+  color: $footerFontColor;
+}
