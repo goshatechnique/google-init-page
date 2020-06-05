@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import loupe from '../images/loupe.png';
 import keyboard from '../images/keyboard.png';
+import voiceSearch from '../images/voice-search.png';
 
 const Main = ({ logo, language, setLanguage }) => {
   const [searchString, setSearchString] = useState('');
@@ -73,7 +74,13 @@ const Main = ({ logo, language, setLanguage }) => {
             src={keyboard}
             alt='#'
             className='search-keyboard'
-            title='экранная клавиатура'
+            title='Экранная клавиатура'
+          />
+          <img
+            src={voiceSearch}
+            alt='#'
+            className='search-voice'
+            title='Голосовой поиск'
           />
         </div>
         <div className='search-navigator'>
@@ -108,8 +115,8 @@ const Main = ({ logo, language, setLanguage }) => {
             ? 'Даступная мова:'
             : 'Google offered in: '}
           {language !== 'ru' ? ruToggle : null}
-          {language !== 'by' ? byToggle : null}
           {language !== 'en' ? enToggle : null}
+          {language !== 'by' ? byToggle : null}
         </div>
       </div>
 

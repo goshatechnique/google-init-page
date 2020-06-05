@@ -136,6 +136,8 @@ body {
   line-height: 34px;
   height: 34px;
   width: 100%;
+  // -webkit-appearance: none;
+  outline: none;
   border: none;
   &:active {
     border: none;
@@ -143,6 +145,15 @@ body {
 }
 
 .search-keyboard {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 26px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.search-voice {
   padding-left: 15px;
   padding-right: 15px;
   width: 26px;
@@ -283,6 +294,7 @@ body {
   border-radius: 5px;
   &:hover {
     background: $footerBackgroundColor;
+    cursor: pointer;
   }
 }
 
